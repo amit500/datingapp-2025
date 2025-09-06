@@ -1,0 +1,35 @@
+<div class="card bg-base-100 w-1/2 mx-auto flex flex-col p-6 rounded-lg shadow-lg">
+    <div class="card-title justify-center text-3xl text-primary">Sign Up</div>
+    <form #registerForm="ngForm" (ngSubmit)="register()">
+        <div class="form-control w-full max-w-xs">
+            <label class="label">
+                <span class="label-text">Email</span>
+            </label>
+            <input type="email" name="email" [(ngModel)]="creds.email" placeholder="Enter your email" class="input input-bordered" />
+        </div>
+        <div class="form-control w-full max-w-xs">
+            <label class="label">
+                <span class="label-text">Display Name</span>
+            </label>
+            <input type="text" name="displayName" [(ngModel)]="creds.displayName" placeholder="Enter your display name" class="input input-bordered" />
+        </div>
+        <div class="form-control w-full max-w-xs">
+            <label class="label">
+                <span class="label-text">Password</span>
+            </label>
+            <input type="password" name="password" [(ngModel)]="creds.password" placeholder="Enter your password" class="input input-bordered" />
+        </div>
+        <!-- <div class="form-control w-full max-w-xs">
+            <select>
+                <option disabled selected>Pick a member</option>
+                @for (member of membersFormApp(); track $index){
+                    <option [value]="member.id">{{member.displayName}}</option>
+                }
+            </select>
+        </div> -->
+        <div class="form-control mt-6">
+            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="button" (click)="cancel()" class="btn btn-secondary">Cancel</button>
+        </div>
+    </form>
+</div>
