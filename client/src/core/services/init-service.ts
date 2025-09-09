@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { AccountService } from './account-service';
 import { of } from 'rxjs';
 
@@ -6,7 +6,7 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class InitService {
-  private accountService = Inject(AccountService);
+  private accountService = inject(AccountService);
 
   init(){
     const userString: any = localStorage.getItem('user');
